@@ -1,0 +1,11 @@
+###
+POST https://localhost:5001/api/produto/create
+Content-Type: application/json
+
+{
+    "Nome" : "bolacha",
+    "Preco" : 4.5
+}
+###
+GET  https://localhost:5001/api/produto/list
+Content-Type: application/json
