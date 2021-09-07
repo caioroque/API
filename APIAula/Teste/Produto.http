@@ -2,8 +2,9 @@
 //CADASTRAR
 POST https://localhost:5001/api/produto/create
 Content-Type: application/json
+
 {
-    "Nome" : "bolacha",
+    "Nome" : "bolachass",
     "Preco" : 4.5
 }
 
@@ -13,19 +14,34 @@ GET  https://localhost:5001/api/produto/list
 Content-Type: application/json
 
 ###
-//EXCLUIR
+//EXCLUIR POR ID
 POST https://localhost:5001/api/produto/delete 
 Content-Type: application/json
+
 {
     "Id" : 1 
+}
+
+###
+//EXCLUIR POR NOME
+POST https://localhost:5001/api/produto/delete 
+Content-Type: application/json
+
+{
+    "Nome" : "bolachass" 
 }
 
 ###
 //ALTERAR
 POST https://localhost:5001/api/produto/update
 Content-Type: application/json
+
 {
     "Id" : 3, 
     "Nome" : "Caio",
     "Descricao" : "Have fun, Dont die"
 }
+
+###
+//Busca por Id
+GET https://localhost:5001/api/produto/getbyid/3
