@@ -28,17 +28,21 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             //Configurar a política de CORS para requisições de qualquer origem
             services.AddCors(
                 options =>
                 {
                     options.AddPolicy("CorsPolicy", builder => builder
-                        .AllowAnyOrigin());
+                        .AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
                 }
             );
 
-            //Configurar todas as injeções de dependência do seu projeto
-            services.AddDbContext<DataContext>(
+            //Configurar todas as injeções de dependência da sua aplicação
+            services.AddDbContext<DataContext>
+            (
                 options => options.UseInMemoryDatabase("database")
             );
 

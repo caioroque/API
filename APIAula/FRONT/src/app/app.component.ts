@@ -7,15 +7,4 @@ import { Produto } from "./models/produto";
     templateUrl: "./app.component.html",
     styleUrls: [],
 })
-export class AppComponent implements OnInit {
-    produtos: Produto[] = [];
-
-    constructor(private service: ProdutoService) {}
-
-    ngOnInit(): void {
-        this.service.list().subscribe((produtos) => {
-            this.produtos = produtos;
-            console.log(produtos);
-        });
-    }
-}
+export class AppComponent {}
